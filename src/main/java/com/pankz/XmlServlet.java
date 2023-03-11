@@ -15,6 +15,15 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 {
 	response.setContentType("text/html");
 	PrintWriter writer=response.getWriter();
-	writer.println("Hello World");
+	String userName=request.getParameter("userName");
+	writer.println("Hello from GET method "+userName);
+}
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+{
+	response.setContentType("text/html");
+	PrintWriter writer=response.getWriter();
+	String userName=request.getParameter("userName");
+	writer.println("Hello from POST method "+userName);
 }
 }
