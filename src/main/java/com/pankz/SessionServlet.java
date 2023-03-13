@@ -3,6 +3,7 @@ package com.pankz;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,13 +16,16 @@ public class SessionServlet extends HttpServlet {
 		PrintWriter writer =response.getWriter();
 		String userName=request.getParameter("name");
 		HttpSession session=request.getSession();
+		ServletContext context=request.getServletContext();
 		if(userName !=" " && userName!=null)
 		{
 			session.setAttribute("saveduserName",userName);
+			context.setAttribute("saveduserName",userName);
 		}
 		
 		writer.println("Request Parameter has username as , " +userName);
 		writer.println("Session Parameter has username as , "+(String)session.getAttribute("saveduserName"));
+		writer.println("Context Parameter has username as , "+(String)context.getAttribute("saveduserName"));
 	}
 
 }
