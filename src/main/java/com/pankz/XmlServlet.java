@@ -26,10 +26,15 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 	PrintWriter writer=response.getWriter();
 	String userName=request.getParameter("userName");
 	String fullName=request.getParameter("fullName");
-	writer.println("Hello from POST method "+userName+"! We know your fullname is "+fullName);
+	writer.println("Hello from POST method "+userName+" We know your fullname is "+fullName);
 	String prof=request.getParameter("prof");
 	writer.println("You are a " +prof);
-	String Location=request.getParameter("location");
-	writer.println("You are in "+Location);
+	//String Location=request.getParameter("location");
+	String Location[]=request.getParameterValues("location");
+	writer.println("You are  at "+Location.length + "places");
+	for(int i=0;i<Location.length;i++)
+	{
+		writer.println(Location[i]);
+	}
 }
 }
