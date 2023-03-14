@@ -8,11 +8,16 @@
   <servlet>
     <description>A simple  servlet</description>
     <display-name>XmlServlet</display-name>
-    <servlet-name>XmlServlet</servlet-name>
-    <servlet-class>com.pankz.XmlServlet</servlet-class>
+ <!-- <servlet-name>XmlServlet</servlet-name> --> 
+ <servlet-name>SessionServlet</servlet-name>  
+ <!-- <servlet-class>com.pankz.XmlServlet</servlet-class> -->   
+ <servlet-class>com.pankz.SessionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>XmlServlet</servlet-name>
-    <url-pattern>/XmlServletPath</url-pattern>
+  <!-- <servlet-name>XmlServlet</servlet-name>
+  
+    <url-pattern>/XmlServletPath</url-pattern> -->
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/SessionServletPath</url-pattern>
   </servlet-mapping>
 </web-app>
