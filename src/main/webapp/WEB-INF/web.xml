@@ -12,6 +12,10 @@
  <servlet-name>SessionServlet</servlet-name>  
  <!-- <servlet-class>com.pankz.XmlServlet</servlet-class> -->   
  <servlet-class>com.pankz.SessionServlet</servlet-class>
+ <init-param>
+ <param-name>defaultName</param-name>
+ <param-value>Martin</param-value>
+ </init-param>
   </servlet>
   <servlet-mapping>
   <!-- <servlet-name>XmlServlet</servlet-name>
